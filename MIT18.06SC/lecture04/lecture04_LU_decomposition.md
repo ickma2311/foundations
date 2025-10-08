@@ -121,49 +121,6 @@ The multipliers $m_{ij}$ (used during elimination) **directly fill in** the entr
 
 ---
 
-## 📊 Example: 3×3 LU Decomposition
-
-### Original Matrix
-
-$$
-A = \begin{bmatrix} 2 & 1 & 1 \\ 4 & -6 & 0 \\ -2 & 7 & 2 \end{bmatrix}
-$$
-
-### Elimination Steps
-
-**Step 1:** Eliminate column 1
-- $m_{21} = \frac{4}{2} = 2$, subtract 2×(row 1) from row 2
-- $m_{31} = \frac{-2}{2} = -1$, subtract -1×(row 1) from row 3
-
-$$
-A \to \begin{bmatrix} 2 & 1 & 1 \\ 0 & -8 & -2 \\ 0 & 8 & 3 \end{bmatrix}
-$$
-
-**Step 2:** Eliminate column 2
-- $m_{32} = \frac{8}{-8} = -1$, subtract -1×(row 2) from row 3
-
-$$
-U = \begin{bmatrix} 2 & 1 & 1 \\ 0 & -8 & -2 \\ 0 & 0 & 1 \end{bmatrix}
-$$
-
-### Lower Triangular Matrix L
-
-Collect the multipliers:
-
-$$
-L = \begin{bmatrix} 1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & -1 & 1 \end{bmatrix}
-$$
-
-### Verification
-
-$$
-LU = \begin{bmatrix} 1 & 0 & 0 \\ 2 & 1 & 0 \\ -1 & -1 & 1 \end{bmatrix}
-\begin{bmatrix} 2 & 1 & 1 \\ 0 & -8 & -2 \\ 0 & 0 & 1 \end{bmatrix}
-= \begin{bmatrix} 2 & 1 & 1 \\ 4 & -6 & 0 \\ -2 & 7 & 2 \end{bmatrix} = A \quad ✓
-$$
-
----
-
 ## ⚡ Computational Complexity
 
 ### Operation Counts
@@ -196,136 +153,19 @@ $$
 
 ---
 
-## 🔀 Partial Pivoting: PA = LU
-
-### When Does LU Fail?
-
-LU decomposition **without row exchanges** fails if we encounter a **zero pivot**.
-
-**Example:**
-
-$$
-A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
-$$
-
-- First pivot is 0 → cannot divide!
-- Need to **swap rows**
-
-### Solution: Permutation Matrix
-
-Introduce a **permutation matrix** $P$ that records row swaps:
-
-$$
-PA = LU
-$$
-
-where:
-- $P$ = product of row exchange matrices
-- $L$ = lower triangular (with 1's on diagonal)
-- $U$ = upper triangular
-
-### Properties of P
-
-- $P$ is an **identity matrix with rows permuted**
-- $P^T P = I$ (orthogonal)
-- $P^{-1} = P^T$
-
-### Partial Pivoting Strategy
-
-At each step, choose the **largest available pivot** (in absolute value) to minimize numerical errors.
-
-**Example:**
-
-$$
-A = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}
-\quad \Rightarrow \quad
-P = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}, \quad
-PA = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} = LU
-$$
-
----
-
-## 🧮 Solving $Ax = b$ Using LU
-
-### Two-Step Process
-
-Given $A = LU$ and $Ax = b$:
-
-**Step 1:** Forward substitution — solve $Lc = b$ for $c$
-
-$$
-\begin{bmatrix}
-1 & 0 & 0 \\
-m_{21} & 1 & 0 \\
-m_{31} & m_{32} & 1
-\end{bmatrix}
-\begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}
-= \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}
-$$
-
-Solve top to bottom:
-- $c_1 = b_1$
-- $c_2 = b_2 - m_{21}c_1$
-- $c_3 = b_3 - m_{31}c_1 - m_{32}c_2$
-
-**Step 2:** Back substitution — solve $Ux = c$ for $x$
-
-$$
-\begin{bmatrix}
-u_{11} & u_{12} & u_{13} \\
-0 & u_{22} & u_{23} \\
-0 & 0 & u_{33}
-\end{bmatrix}
-\begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}
-= \begin{bmatrix} c_1 \\ c_2 \\ c_3 \end{bmatrix}
-$$
-
-Solve bottom to top:
-- $x_3 = c_3 / u_{33}$
-- $x_2 = (c_2 - u_{23}x_3) / u_{22}$
-- $x_1 = (c_1 - u_{12}x_2 - u_{13}x_3) / u_{11}$
-
----
-
 ## 🎓 Key Takeaways
 
-### Main Ideas
+1. **Multiplying a matrix by elimination matrices yields an upper-triangular $U$**,
+   hence $A = LU$, where $L = (\text{product of elimination matrices})^{-1}$.
 
-1. **LU decomposition factors $A = LU$** where:
-   - $L$ = lower triangular (multipliers from elimination)
-   - $U$ = upper triangular (result of elimination)
+2. **Practice small casses (2×2, 3×3)** to build intuition for how $L$ and $U$ form.
 
-2. **L is "free"** — just save the multipliers during elimination
+3. **Each elimination keeps the pivot row fixed** and modifies rows below it:
+   - $E_{ij} = I - m_{ij} \mathbf{e}_i \mathbf{e}_j^T$
+   - $(i,j)$ element of $E_{ij}$ is $-m_{ij}$.
 
-3. **Complexity is $O(n^3/3)$** for factorization, but only $O(n^2)$ to solve once factored
+4. **Complexity ≈ $\frac{n^3}{3}$** because each step updates a smaller submatrix.
 
-4. **Reusable:** When $A$ stays constant but $b$ changes, LU saves enormous time
-
-5. **Partial pivoting ($PA = LU$)** ensures numerical stability
-
-### Practical Use
-
-```python
-# In NumPy/SciPy:
-from scipy.linalg import lu
-
-P, L, U = lu(A)  # Get P, L, U such that A = P @ L @ U
-```
-
----
-
-## 📝 Practice Problems
-
-1. Compute the LU decomposition of $\begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}$ by hand
-
-2. For $A = \begin{bmatrix} 2 & 1 & 1 \\ 4 & -6 & 0 \\ -2 & 7 & 2 \end{bmatrix}$, verify $A = LU$ with the matrices from the example
-
-3. Explain why LU fails for $\begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix}$ and show how $PA = LU$ fixes it
-
-4. Count the operations for solving 10 systems $Ax = b_i$ ($i = 1, \ldots, 10$) with and without LU
-
-5. Given $L = \begin{bmatrix} 1 & 0 \\ 2 & 1 \end{bmatrix}$ and $U = \begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}$, solve $LUx = \begin{bmatrix} 7 \\ 10 \end{bmatrix}$
-
----
-
-**Next:** Lecture 5 — Permutations, Transposes, and Vector Spaces
+5. **LU is valuable when $A$ stays constant but $b$ changes** — reuse saves cost:
+   - Decomposition: $O(n^3)$
+   - Solving $(LU)x = b$: $O(n^2)$

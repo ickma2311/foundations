@@ -1,5 +1,7 @@
 # MIT 18.06SC — Lecture 2: Elimination (Gaussian Elimination)
 
+**Video Lecture**: [MIT 18.06 Lecture 2 - Elimination with Matrices](https://www.youtube.com/watch?v=QVKj3LADCnA&list=PL221E2BBF13BECF6C&index=7)
+
 ## 📚 Key Concepts
 
 ### 1. Goal of Elimination

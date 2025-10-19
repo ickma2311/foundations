@@ -1,5 +1,7 @@
 # Lecture 6: Column Space and Null Space
 
+**Video Lecture**: [MIT 18.06 Lecture 6 - Column Space and Nullspace](https://www.youtube.com/watch?v=8o5Cmfpeo6g&list=PL221E2BBF13BECF6C&index=15)
+
 ## Subspace Properties
 
 - $P \cup L$ is **not** a subspace (P and L are two subspaces)

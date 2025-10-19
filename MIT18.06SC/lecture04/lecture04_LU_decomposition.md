@@ -1,5 +1,7 @@
 # Lecture 4: LU Decomposition (A = LU)
 
+**Video Lecture**: [MIT 18.06 Lecture 4 - Factorization into A = LU](https://www.youtube.com/watch?v=MsIvs_6vC38&list=PL221E2BBF13BECF6C&index=11)
+
 Gilbert Strang — MIT 18.06 Linear Algebra
 **Topic:** Factoring matrices into **Lower × Upper** triangular form
 

@@ -1,5 +1,7 @@
 # Lecture 8: Solving Ax = b
 
+**Video Lecture**: [MIT 18.06 Lecture 8 - Solving Ax = b: Row Reduced Form R](https://www.youtube.com/watch?v=9Q1q7s1jTzU&list=PL221E2BBF13BECF6C&index=19)
+
 ## Complete Solution Structure
 
 The general solution to $Ax = b$ (when it exists) has the form:

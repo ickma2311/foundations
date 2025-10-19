@@ -1,5 +1,7 @@
 # Lecture 3: Multiplication and Inverse
 
+**Video Lecture**: [MIT 18.06 Lecture 3 - Multiplication and Inverse Matrices](https://www.youtube.com/watch?v=FX4C-JpTFgY&list=PL221E2BBF13BECF6C&index=9)
+
 Gilbert Strang — MIT 18.06 Linear Algebra
 **Topic:** Multiple ways to understand **matrix multiplication** and **matrix inverse**
 

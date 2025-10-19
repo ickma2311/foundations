@@ -1,5 +1,7 @@
 # Lecture 7: Solving Ax=0 - Pivot Variables and Special Solutions
 
+**Video Lecture**: [MIT 18.06 Lecture 7 - Solving Ax = 0: Pivot Variables, Special Solutions](https://www.youtube.com/watch?v=VqP2tREMvt0&list=PL221E2BBF13BECF6C&index=17)
+
 ## Homogeneous Linear System
 
 We consider the homogeneous linear system:

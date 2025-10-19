@@ -1,5 +1,7 @@
 # MIT 18.06 Lecture 1: The Geometry of Linear Equations
 
+**Video Lecture**: [MIT 18.06 Lecture 1 - The Geometry of Linear Equations](https://www.youtube.com/watch?v=J7DzL2_Na80&list=PL221E2BBF13BECF6C&index=3)
+
 This document covers the fundamental geometric interpretation of linear algebra, introducing the row picture and column picture perspectives of linear systems.
 
 ## Key Concepts

@@ -27,7 +27,23 @@ $$
 r \cdot \vec{0} + 0 \cdot x_1 + \cdots + 0 \cdot x_n = 0 \quad \text{(non-trivial combination)}
 $$
 
-**Case 2: More vectors than dimensions ($n > m$)**
+**Case 2: Vectors in the same direction (collinear)**
+
+If any two vectors are scalar multiples of each other, the set is dependent.
+
+![Collinear vectors](same_direction.png)
+
+**Example**: Vectors $v_1 = \begin{bmatrix} 1 \\ 2 \end{bmatrix}$ and $v_2 = \begin{bmatrix} 2 \\ 4 \end{bmatrix}$ are dependent because:
+$$
+2v_1 - v_2 = 2\begin{bmatrix} 1 \\ 2 \end{bmatrix} - \begin{bmatrix} 2 \\ 4 \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}
+$$
+
+**General case**: If $v_2 = cv_1$ for some scalar $c$, then:
+$$
+cv_1 - v_2 = 0 \quad \text{(non-trivial combination)}
+$$
+
+**Case 3: More vectors than dimensions ($n > m$)**
 
 If we have $n$ vectors in $\mathbb{R}^m$ with $n > m$, and the first $m$ vectors are linearly independent (not collinear/coplanar), then all $n$ vectors must be dependent.
 

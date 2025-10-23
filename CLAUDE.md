@@ -130,6 +130,14 @@ This project extensively utilizes Claude Code for:
 - **Cross-Referencing**: Maintain connections between related concepts across topics
 - **Documentation**: Generate structured academic documentation from notebook content
 
+### Markdown Documentation Standards
+
+**For lectures and book chapters, include:**
+- **Overview section**: List 3-5 main topics covered in the lecture/chapter
+- **Video/source link**: YouTube link for lectures, book reference for chapters
+- **Structured content**: Numbered sections with examples and derivations
+- **Summary**: Recap of key concepts
+
 ## Contribution Guidelines
 
 Suggestions and improvements to project content are welcome. Please ensure:

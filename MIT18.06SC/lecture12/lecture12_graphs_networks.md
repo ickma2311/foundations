@@ -217,6 +217,7 @@ where:
 - $u_i$, $u_j$: potentials at nodes $i$ and $j$
 
 **Matrix form**:
+
 $$
 x = A^T u
 $$
@@ -232,6 +233,7 @@ $$
 **Statement**: The total current flowing into a node equals the total current flowing out.
 
 **Mathematical form**:
+
 $$
 A^T y = \mathbf{0}
 $$
@@ -258,6 +260,7 @@ where $y$ is the vector of edge currents.
 ### Loops
 
 **Number of loops**:
+
 $$
 \text{number of loops} = \dim(N(A^T)) = m - r
 $$
@@ -274,6 +277,7 @@ where:
 ## 8. Euler's Formula
 
 **Formula**:
+
 $$
 (\text{nodes}) - (\text{edges}) + (\text{loops}) = 1
 $$
@@ -289,11 +293,13 @@ $$
 $$
 
 Rearranging:
+
 $$
 n - m + (\text{loops}) = 1
 $$
 
 **For our example**:
+
 $$
 4 - 5 + 2 = 1 \quad \checkmark
 $$

@@ -208,6 +208,7 @@ $$
 **Statement**: The current on an edge is proportional to the potential drop across that edge.
 
 **Mathematical form**:
+
 $$
 x_{ij} = u_i - u_j
 $$
@@ -219,11 +220,11 @@ where:
 **Matrix form**:
 
 $$
-x = A^T u
+x = A u
 $$
 
 **Interpretation**:
-- $A^T$ maps node potentials to edge currents
+- $Au$ maps node potentials to edge currents
 - Each current is the difference in potential between the edge's endpoints
 
 ---

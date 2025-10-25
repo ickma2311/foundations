@@ -26,10 +26,10 @@ This lecture connects linear algebra to graph theory and electrical networks:
 
 $$
 A = \begin{bmatrix}
--1 & 1 & 0 & 0 \\
-0 & -1 & 1 & 0 \\
--1 & 0 & 1 & 0 \\
-0 & 0 & -1 & 1 \\
+-1 & 1 & 0 & 0 \\\\
+0 & -1 & 1 & 0 \\\\
+-1 & 0 & 1 & 0 \\\\
+0 & 0 & -1 & 1 \\\\
 -1 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -55,24 +55,24 @@ To find $N(A)$, we solve $Ax = \mathbf{0}$:
 
 $$
 \begin{bmatrix}
--1 & 1 & 0 & 0 \\
-0 & -1 & 1 & 0 \\
--1 & 0 & 1 & 0 \\
-0 & 0 & -1 & 1 \\
+-1 & 1 & 0 & 0 \\\\
+0 & -1 & 1 & 0 \\\\
+-1 & 0 & 1 & 0 \\\\
+0 & 0 & -1 & 1 \\\\
 -1 & 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\
-x_2 \\
-x_3 \\
+x_1 \\\\
+x_2 \\\\
+x_3 \\\\
 x_4
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\
-0 \\
-0 \\
-0 \\
+0 \\\\
+0 \\\\
+0 \\\\
+0 \\\\
 0
 \end{bmatrix}
 $$
@@ -87,9 +87,9 @@ From these equations: $x_1 = x_2 = x_3 = x_4$
 **Solution**:
 $$
 N(A) = c \begin{bmatrix}
-1 \\
-1 \\
-1 \\
+1 \\\\
+1 \\\\
+1 \\\\
 1
 \end{bmatrix}
 $$
@@ -114,9 +114,9 @@ $$
 
 $$
 A^T = \begin{bmatrix}
--1 & 0 & -1 & 0 & -1 \\
-1 & -1 & 0 & 0 & 0 \\
-0 & 1 & 1 & -1 & 0 \\
+-1 & 0 & -1 & 0 & -1 \\\\
+1 & -1 & 0 & 0 & 0 \\\\
+0 & 1 & 1 & -1 & 0 \\\\
 0 & 0 & 0 & 1 & 1
 \end{bmatrix}
 $$
@@ -146,9 +146,9 @@ $$
 **System of equations**: $A^T y = \mathbf{0}$ gives:
 $$
 \begin{aligned}
-y_1 + y_3 + y_5 &= 0 \\
-y_1 - y_2 &= 0 \\
-y_2 + y_3 - y_4 &= 0 \\
+y_1 + y_3 + y_5 &= 0 \\\\
+y_1 - y_2 &= 0 \\\\
+y_2 + y_3 - y_4 &= 0 \\\\
 y_4 + y_5 &= 0
 \end{aligned}
 $$
@@ -166,16 +166,16 @@ For the second loop:
 **Basis for $N(A^T)$**:
 $$
 N(A^T) = c_1 \begin{bmatrix}
-1 \\
-1 \\
--1 \\
-0 \\
+1 \\\\
+1 \\\\
+-1 \\\\
+0 \\\\
 0
 \end{bmatrix} + c_2 \begin{bmatrix}
-0 \\
-0 \\
-0 \\
-1 \\
+0 \\\\
+0 \\\\
+0 \\\\
+1 \\\\
 -1
 \end{bmatrix}
 $$
@@ -257,7 +257,7 @@ where $y$ is the vector of edge currents.
 
 **Number of loops**:
 $$
-\text{\# loops} = \dim(N(A^T)) = m - r
+\text{number of loops} = \dim(N(A^T)) = m - r
 $$
 
 where:
@@ -273,21 +273,21 @@ where:
 
 **Formula**:
 $$
-\text{\# nodes} - \text{\# edges} + \text{\# loops} = 1
+(\text{nodes}) - (\text{edges}) + (\text{loops}) = 1
 $$
 
 **Derivation using rank-nullity**:
 $$
 \begin{aligned}
-\text{\# loops} &= m - r \\
-&= m - (n - 1) \\
+\text{loops} &= m - r \\\\
+&= m - (n - 1) \\\\
 &= m - n + 1
 \end{aligned}
 $$
 
 Rearranging:
 $$
-n - m + \text{\# loops} = 1
+n - m + (\text{loops}) = 1
 $$
 
 **For our example**:
@@ -304,11 +304,11 @@ $$
 **Key concepts**:
 1. **Incidence matrix $A$**: Rows = edges, columns = nodes; entries are $-1$, $0$, $+1$
 2. **$N(A)$**: Constant potentials (dimension = 1)
-3. **$N(A^T)$**: Loops in the graph (dimension = # loops)
+3. **$N(A^T)$**: Loops in the graph (dimension = number of loops)
 4. **Rank**: $\text{rank}(A) = n - 1$ (number of nodes - 1)
 5. **Ohm's law**: $x = A^T u$ (currents from potentials)
 6. **Kirchhoff's law**: $A^T y = \mathbf{0}$ (current conservation)
-7. **Euler's formula**: $n - m + \text{loops} = 1$
+7. **Euler's formula**: (nodes) - (edges) + (loops) = 1
 
 **Physical applications**:
 - Electrical networks and circuits

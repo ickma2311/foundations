@@ -143,6 +143,7 @@ $$
 $$
 
 **System of equations**: $A^T y = \mathbf{0}$ gives:
+
 $$
 \begin{aligned}
 y_1 + y_3 + y_5 &= 0 \\
@@ -276,6 +277,7 @@ $$
 $$
 
 **Derivation using rank-nullity**:
+
 $$
 \begin{aligned}
 \text{loops} &= m - r \\

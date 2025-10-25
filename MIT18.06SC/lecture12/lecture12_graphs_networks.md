@@ -26,10 +26,10 @@ This lecture connects linear algebra to graph theory and electrical networks:
 
 $$
 A = \begin{bmatrix}
--1 & 1 & 0 & 0 \\\\
-0 & -1 & 1 & 0 \\\\
--1 & 0 & 1 & 0 \\\\
-0 & 0 & -1 & 1 \\\\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
 -1 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -55,24 +55,24 @@ To find $N(A)$, we solve $Ax = \mathbf{0}$:
 
 $$
 \begin{bmatrix}
--1 & 1 & 0 & 0 \\\\
-0 & -1 & 1 & 0 \\\\
--1 & 0 & 1 & 0 \\\\
-0 & 0 & -1 & 1 \\\\
+-1 & 1 & 0 & 0 \\
+0 & -1 & 1 & 0 \\
+-1 & 0 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
 -1 & 0 & 0 & 1
 \end{bmatrix}
 \begin{bmatrix}
-x_1 \\\\
-x_2 \\\\
-x_3 \\\\
+x_1 \\
+x_2 \\
+x_3 \\
 x_4
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 \\\\
-0 \\\\
-0 \\\\
-0 \\\\
+0 \\
+0 \\
+0 \\
+0 \\
 0
 \end{bmatrix}
 $$
@@ -87,9 +87,9 @@ From these equations: $x_1 = x_2 = x_3 = x_4$
 **Solution**:
 $$
 N(A) = c \begin{bmatrix}
-1 \\\\
-1 \\\\
-1 \\\\
+1 \\
+1 \\
+1 \\
 1
 \end{bmatrix}
 $$
@@ -114,9 +114,9 @@ $$
 
 $$
 A^T = \begin{bmatrix}
--1 & 0 & -1 & 0 & -1 \\\\
-1 & -1 & 0 & 0 & 0 \\\\
-0 & 1 & 1 & -1 & 0 \\\\
+-1 & 0 & -1 & 0 & -1 \\
+1 & -1 & 0 & 0 & 0 \\
+0 & 1 & 1 & -1 & 0 \\
 0 & 0 & 0 & 1 & 1
 \end{bmatrix}
 $$
@@ -146,9 +146,9 @@ $$
 **System of equations**: $A^T y = \mathbf{0}$ gives:
 $$
 \begin{aligned}
-y_1 + y_3 + y_5 &= 0 \\\\
-y_1 - y_2 &= 0 \\\\
-y_2 + y_3 - y_4 &= 0 \\\\
+y_1 + y_3 + y_5 &= 0 \\
+y_1 - y_2 &= 0 \\
+y_2 + y_3 - y_4 &= 0 \\
 y_4 + y_5 &= 0
 \end{aligned}
 $$
@@ -166,16 +166,16 @@ For the second loop:
 **Basis for $N(A^T)$**:
 $$
 N(A^T) = c_1 \begin{bmatrix}
-1 \\\\
-1 \\\\
--1 \\\\
-0 \\\\
+1 \\
+1 \\
+-1 \\
+0 \\
 0
 \end{bmatrix} + c_2 \begin{bmatrix}
-0 \\\\
-0 \\\\
-0 \\\\
-1 \\\\
+0 \\
+0 \\
+0 \\
+1 \\
 -1
 \end{bmatrix}
 $$
@@ -279,8 +279,8 @@ $$
 **Derivation using rank-nullity**:
 $$
 \begin{aligned}
-\text{loops} &= m - r \\\\
-&= m - (n - 1) \\\\
+\text{loops} &= m - r \\
+&= m - (n - 1) \\
 &= m - n + 1
 \end{aligned}
 $$

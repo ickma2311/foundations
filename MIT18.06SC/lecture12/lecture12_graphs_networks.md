@@ -32,7 +32,6 @@ A = \begin{bmatrix}
 0 & 0 & -1 & 1 \\
 -1 & 0 & 0 & 1
 \end{bmatrix}
-
 $$
 
 **Dimensions**: $A$ is $5 \times 4$ (m × n matrix)
@@ -53,7 +52,6 @@ $$
 ### Finding $N(A)$
 
 To find $N(A)$, we solve $Ax = \mathbf{0}$:
-
 
 $$
 \begin{bmatrix}
@@ -76,7 +74,6 @@ x_4
 0 \\
 0
 \end{bmatrix}
-
 $$
 
 This gives us the system:
@@ -87,7 +84,6 @@ This gives us the system:
 From these equations: $x_1 = x_2 = x_3 = x_4$
 
 **Solution**:
-
 $$
 N(A) = c \begin{bmatrix}
 1 \\
@@ -95,7 +91,6 @@ N(A) = c \begin{bmatrix}
 1 \\
 1
 \end{bmatrix}
-
 $$
 
 **Dimension**: $\dim(N(A)) = 1$
@@ -106,10 +101,8 @@ $$
 - This corresponds to setting all nodes to the same "ground level"
 
 **Rank calculation**:
-
 $$
 \text{rank}(A) = n - \dim(N(A)) = 4 - 1 = 3
-
 $$
 
 ---
@@ -118,7 +111,6 @@ $$
 
 ### Transpose Matrix
 
-
 $$
 A^T = \begin{bmatrix}
 -1 & 0 & -1 & 0 & -1 \\
@@ -126,7 +118,6 @@ A^T = \begin{bmatrix}
 0 & 1 & 1 & -1 & 0 \\
 0 & 0 & 0 & 1 & 1
 \end{bmatrix}
-
 $$
 
 **Dimensions**: $4 \times 5$ (n × m matrix)
@@ -148,14 +139,11 @@ $$
 
 **Dimension**:
 
-
 $$
 \dim(N(A^T)) = m - r = 5 - 3 = 2
-
 $$
 
 **System of equations**: $A^T y = \mathbf{0}$ gives:
-
 
 $$
 \begin{aligned}
@@ -164,7 +152,6 @@ y_1 - y_2 &= 0 \\
 y_2 + y_3 - y_4 &= 0 \\
 y_4 + y_5 &= 0
 \end{aligned}
-
 $$
 
 **Solution process**:
@@ -178,7 +165,6 @@ For the second loop:
 - This gives the second loop: edges 4, 5
 
 **Basis for $N(A^T)$**:
-
 
 $$
 N(A^T) = c_1 \begin{bmatrix}
@@ -194,7 +180,6 @@ N(A^T) = c_1 \begin{bmatrix}
 1 \\
 -1
 \end{bmatrix}
-
 $$
 
 **Interpretation**:
@@ -223,10 +208,8 @@ $$
 **Statement**: The current on an edge is proportional to the potential drop across that edge.
 
 **Mathematical form**:
-
 $$
 x_{ij} = u_i - u_j
-
 $$
 
 where:
@@ -234,10 +217,8 @@ where:
 - $u_i$, $u_j$: potentials at nodes $i$ and $j$
 
 **Matrix form**:
-
 $$
 x = A^T u
-
 $$
 
 **Interpretation**:
@@ -251,10 +232,8 @@ $$
 **Statement**: The total current flowing into a node equals the total current flowing out.
 
 **Mathematical form**:
-
 $$
 A^T y = \mathbf{0}
-
 $$
 
 where $y$ is the vector of edge currents.
@@ -279,10 +258,8 @@ where $y$ is the vector of edge currents.
 ### Loops
 
 **Number of loops**:
-
 $$
 \text{number of loops} = \dim(N(A^T)) = m - r
-
 $$
 
 where:
@@ -297,14 +274,11 @@ where:
 ## 8. Euler's Formula
 
 **Formula**:
-
 $$
 (\text{nodes}) - (\text{edges}) + (\text{loops}) = 1
-
 $$
 
 **Derivation using rank-nullity**:
-
 
 $$
 \begin{aligned}
@@ -312,12 +286,39 @@ $$
 &= m - (n - 1) \\
 &= m - n + 1
 \end{aligned}
-
 $$
 
 Rearranging:
-
 $$
 n - m + (\text{loops}) = 1
-
 $$
+
+**For our example**:
+$$
+4 - 5 + 2 = 1 \quad \checkmark
+$$
+
+**Interpretation**: This fundamental relationship connects graph topology to linear algebra through the rank-nullity theorem.
+
+---
+
+## Summary
+
+**Key concepts**:
+1. **Incidence matrix $A$**: Rows = edges, columns = nodes; entries are $-1$, $0$, $+1$
+2. **$N(A)$**: Constant potentials (dimension = 1)
+3. **$N(A^T)$**: Loops in the graph (dimension = number of loops)
+4. **Rank**: $\text{rank}(A) = n - 1$ (number of nodes - 1)
+5. **Ohm's law**: $x = A^T u$ (currents from potentials)
+6. **Kirchhoff's law**: $A^T y = \mathbf{0}$ (current conservation)
+7. **Euler's formula**: (nodes) - (edges) + (loops) = 1
+
+**Physical applications**:
+- Electrical networks and circuits
+- Flow networks and transportation
+- Communication networks
+- Structural engineering (trusses)
+
+---
+
+*Source: MIT 18.06SC Linear Algebra, Lecture 12*

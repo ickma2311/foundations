@@ -138,6 +138,7 @@ $$
 ### Finding $N(A^T)$
 
 **Dimension**:
+
 $$
 \dim(N(A^T)) = m - r = 5 - 3 = 2
 $$
@@ -164,6 +165,7 @@ For the second loop:
 - This gives the second loop: edges 4, 5
 
 **Basis for $N(A^T)$**:
+
 $$
 N(A^T) = c_1 \begin{bmatrix}
 1 \\

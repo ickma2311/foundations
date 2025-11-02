@@ -1,5 +1,7 @@
 # Lecture 16: Projection Matrices and Least Square
 
+**Video**: [MIT 18.06 Lecture 16](https://www.youtube.com/watch?v=osh80YCg_GM&list=PL221E2BBF13BECF6C&index=35)
+
 ## Projection Matrix
 The projection matrix P projects any vector b onto the column space of A.
 

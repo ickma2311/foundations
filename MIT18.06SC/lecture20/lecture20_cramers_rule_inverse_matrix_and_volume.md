@@ -78,7 +78,7 @@ $|\det A|$ equals the volume of a box (parallelepiped).
 
 The absolute value of the determinant of an $n \times n$ matrix equals the n-dimensional volume of the **parallelotope** spanned by its column vectors.
 
-![Determinant Area Parallelogram](MIT1806-Lecture20-Determinant-Area-Parallelogram.png)
+![Determinant as Volume](MIT1806-Lecture20-Determinant-as-Volume.png)
 
 ### Sign of the Determinant
 
@@ -115,7 +115,7 @@ This means orthogonal transformations preserve volume.
 
 ### Area of Parallelogram
 
-![Determinant as Volume](MIT1806-Lecture20-Determinant-as-Volume.png)
+![Determinant Area Parallelogram](MIT1806-Lecture20-Determinant-Area-Parallelogram.png)
 
 For a 2D parallelogram formed by vectors $\begin{bmatrix}a\\c\end{bmatrix}$ and $\begin{bmatrix}b\\d\end{bmatrix}$:
 

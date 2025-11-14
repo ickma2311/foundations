@@ -191,7 +191,7 @@ At $a = 0$:
 - $c_3 = \frac{\sin 0}{3!} = 0$
 - $c_4 = \frac{\cos 0}{4!} = \frac{1}{4!}$
 
-**Pattern**: Only even powers survive, with alternating signs. We have $c_{2k} = (-1)^k$ and $c_{2k+1} = 0$.
+**Pattern**: Only even powers survive, with alternating signs. We have $c_{2k} = \frac{(-1)^k}{(2k)!}$ and $c_{2k+1} = 0$.
 
 **Taylor expansion**:
 
@@ -307,7 +307,7 @@ $$
 For positive frequencies ($n > 0$):
 
 $$
-c_n = \frac{a_n}{2} - \frac{b_n}{2i} = \frac{a_n - ib_n}{2}
+c_n = \frac{a_n}{2} + \frac{b_n}{2i} = \frac{a_n - ib_n}{2}
 $$
 
 (Note: $\frac{1}{i} = -i$ because $i \cdot (-i) = -i^2 = 1$)
@@ -315,7 +315,7 @@ $$
 For negative frequencies ($n < 0$):
 
 $$
-c_{-n} = \frac{a_n}{2} + \frac{b_n}{2i} = \frac{a_n + ib_n}{2}
+c_{-n} = \frac{a_n}{2} - \frac{b_n}{2i} = \frac{a_n + ib_n}{2}
 $$
 
 **The complex form of the Fourier series**:
